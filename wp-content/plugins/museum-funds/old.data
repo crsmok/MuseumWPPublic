@@ -1,0 +1,66 @@
+ /*
+        Creating endpoints for the Rest API
+    */
+
+  /*  function mus_getReferences(WP_REST_Request $request){
+        $param = isset($request['id']) ? $request['id'] : null;
+
+       // return isset($request['id']) ? $request['id'] : null;
+
+        if($param){
+            return 'With Id';
+        } else {
+            return 'Without Id';
+        }
+
+    }
+
+    add_action('rest_api_init',function(){
+        register_rest_route('museum-funds/v1', '/references/(?P<id>\d+)',array(
+            array(
+                'method'  => 'GET',
+                'callback' => 'mus_getReferences',
+               'permission_callback' => function( $request ){
+				  return is_user_logged_in();
+			}
+            )
+         )
+
+        );
+
+        register_rest_route('museum-funds/v1', 'references',array(
+            array(
+                'method'  => 'GET',
+                'callback' => 'mus_getReferences',
+                'permission_callback' => function( $request ){
+				  return is_user_logged_in();
+			}
+            )
+         )
+
+        );
+    });
+
+
+
+    /*add_filters('jwt_auth_cors_allow_headers',
+        function(){
+        header("Access-Control-Allow-Origin: *");
+        header('Access-Control-Allow-Credentials: true');
+        header('Access-Control-Allow-Methods: POST, GET, OPTIONS, PUT, DELETE');
+        header( 'Access-Control-Allow-Headers : Content-Type, X-Auth-Token, Origin');
+
+    });*/
+    /*add_filter('jwt_auth_token_before_dispatch','mus_user_request');
+
+    function mus_user_request($data){
+        /*$data = array(
+            'token' => $token,
+            'user_email' => $user->data->user_email,
+            'user_nicename' => $user->data->user_nicename,
+            'user_display_name' => $user->data->display_name,
+            'user_test' =>'test'
+        );
+
+        return $data;
+    }*/

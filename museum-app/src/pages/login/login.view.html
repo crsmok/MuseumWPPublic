@@ -1,0 +1,48 @@
+<div class="row login">
+    <div class="panel panel-default">
+        <form class="form-login" name="auth"  novalidate>
+            <div class="form-group"
+                 ng-class="{'has-error': auth.login.$invalid && auth.$submitted}">
+                <label class="control-label" for="login">Login</label>
+                <div class="form-group">
+                    <input type="text"
+                           class="form-control"
+                           id="login"
+                           name="login"
+                           ng-model="$ctrl.user.login"
+                           ng-disabled="$ctrl.disableForm"
+                           required>
+                </div>
+            </div>
+            <div class="form-group"
+                 ng-class="{'has-error': auth.password.$invalid && auth.$submitted}" >
+                <label class="control-label" for="password">Password</label>
+                <div class="form-group">
+                    <input type="password"
+                           class="form-control"
+                           id="password"
+                           name="password"
+                           ng-model="$ctrl.user.password"
+                           ng-disabled="$ctrl.disableForm"
+                           required>
+                </div>
+            </div>
+            <div class="panel-button">
+                <button type="button"
+                        class="btn btn-primary"
+                        ng-show="!$ctrl.disableForm"
+                        ng-click="$ctrl.signIn()">
+                    <strong>Sign in</strong>
+                </button>
+            </div>
+            <div class="panel-button">
+                <button type="button"
+                        class="btn btn-primary"
+                        ng-show="$ctrl.disableForm"
+                        ng-click="$ctrl.logOut()">
+                    <strong>Logout</strong>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

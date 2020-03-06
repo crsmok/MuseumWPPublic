@@ -1,0 +1,50 @@
+<div class="row references">
+    <div class="col-sm-6">
+        <table class="table table-dark references-table ">
+            <thead>
+            <tr>
+                <th scope="col">№</th>
+                <th scope="col">Название справочника</th>
+                <th scope="col">Описание</th>
+                <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody ng-repeat="(number,ref) in $ctrl.refList">
+            <tr ng-click="$ctrl.viewRef(number)">
+
+                    <th scope="row">{{number + 1}}</th>
+                    <td>{{ref.ref_title}}</td>
+                    <td>{{ref.ref_description}}</td>
+                    <td>
+                        <button type="button" class="btn btn-primary" name="view_{{number+1}}" ng-click="$ctrl.editRef(number)">
+                            Редактировать
+                        </button>
+                    </td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+    <div class="col-sm-6">
+        <table class="table table-dark references-table ">
+            <thead>
+            <tr>
+                <th scope="col">№</th>
+                <th scope="col">Значенме</th>
+                <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody ng-repeat="(number,refValue) in $ctrl.refListValue">
+            <tr ng-click="">
+
+                <th scope="row">{{number + 1}}</th>
+                <td>{{refValue.ref_value}}</td>
+                <td>
+                    <button type="button" class="btn btn-primary" name="view_{{number+1}}" ng-click="$ctrl.editRef(number)">
+                        Редактировать
+                    </button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

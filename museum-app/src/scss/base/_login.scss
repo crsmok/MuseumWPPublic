@@ -1,0 +1,28 @@
+.login {
+  margin-left: calc((100% - 500px)/2);
+  margin-top: 50px;
+
+  .panel {
+    width: 500px;
+    background: #d3d3d3;
+    text-align: left;
+    font-size: 15px;
+    padding: 15px;
+
+    .form-group {
+      margin-bottom: 40px;
+    }
+
+    input {
+      font-size: 14px;
+    }
+
+    .panel-button {
+      text-align: right;
+      margin-bottom: 30px;
+      button {
+        font-size: 16px;
+      }
+    }
+  }
+}
